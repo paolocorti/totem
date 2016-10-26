@@ -1,0 +1,1 @@
+import Castle from './castle'

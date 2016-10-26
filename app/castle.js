@@ -1,7 +1,9 @@
-class Castle {
+import THREE from 'three'
 
+class Castle {
   constructor(scene) {
     this.scene = scene
+    console.log('castle');
   }
 
   // CASTLE CORE CUBE
@@ -52,12 +54,12 @@ class Castle {
     }
 
     if (initialGeneration) {
-      var coordinates = getGridCoordinatesFromWorldCoordiantes(cube.position);
+      const coordinates = getGridCoordinatesFromWorldCoordiantes(cube.position);
       positions[cube.name] = {x: coordinates.x, y: finalY, z: coordinates.z }
       cube.position.set(coordinates.x,finalY,coordinates.z)
       collidableMeshList.push(cube);
     } else {
-      var tween = new TWEEN.Tween({y: 400})
+      const tween = new TWEEN.Tween({y: 400})
       .to({ y: finalY}, 500)
       .onUpdate(function() {
         cube.position.setY(this.y)
@@ -87,3 +89,5 @@ class Castle {
     return randomPos
   }
 }
+
+export default Castle
