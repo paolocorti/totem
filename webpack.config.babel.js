@@ -3,7 +3,7 @@ export default {
   entry: `${__dirname}/app/main.js`,
   output: {
     path: `${__dirname}/dist`,
-    filename: 'main.js',
+    filename: 'bundle.js',
     pathinfo: true
   },
   module: {
@@ -11,9 +11,6 @@ export default {
       {
         test: /\.js$/,
         loader: 'babel',
-        query: {
-          presets: ['es2015']
-        }
       }
     ]
   }
